@@ -1,0 +1,1 @@
+serializovatelne metody
