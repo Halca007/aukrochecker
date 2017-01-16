@@ -21,7 +21,7 @@ namespace aukrochecker
     using System.Threading;
     using System.Xml.Serialization;
     using MiningEngine;
-
+    using System.Runtime.Serialization;
 
 
 
@@ -37,6 +37,7 @@ namespace aukrochecker
         {
             SemaphorRobotThread.setStatus(false);
             u_centralStorage.saveConfig();
+            Application.Exit();
         }
 
 
@@ -542,31 +543,31 @@ namespace aukrochecker
         {
             PointOfInterest tmp = new PointOfInterest();
             tmp.nameOfPoint = this.textBox15.Text;
+            tmp.fileName = tmp.nameOfPoint;
             
             string[] catURLs = { this.textBox8.Text };
             tmp.CATURL = catURLs;
-         //   !!! tmp.BASEURL = this.textBox4.Text;
+            //   !!! tmp.BASEURL = this.textBox4.Text;
 
-            tmp.MINPRICE = Convert.ToInt16(this.textBox9.Text);
-            tmp.MAXPRICE = Convert.ToInt16(this.textBox10.Text);
+            if (!String.IsNullOrEmpty(this.textBox9.Text)) tmp.MINPRICE = Convert.ToInt16(this.textBox9.Text);
+            if (!String.IsNullOrEmpty(this.textBox10.Text)) tmp.MAXPRICE = Convert.ToInt16(this.textBox10.Text);
             tmp.SEARCHEDPHRASE = this.textBox11.Text;
             tmp.REGION = this.textBox12.Text;
-            tmp.ZIPCODE = Convert.ToInt16(this.textBox13.Text);
-            tmp.DISTANCE = Convert.ToInt16(this.textBox14.Text);
+            if (!String.IsNullOrEmpty(this.textBox13.Text)) tmp.ZIPCODE = Convert.ToInt16(this.textBox13.Text);
+            if (!String.IsNullOrEmpty(this.textBox14.Text)) tmp.DISTANCE = Convert.ToInt16(this.textBox14.Text);
             tmp.SEARCHNEW = this.checkBox1.Checked;
             tmp.SEARCHUSED = this.checkBox2.Checked;
             tmp.BUYNOW = this.checkBox3.Checked;
             tmp.AUCTIONS = this.checkBox4.Checked;
-            tmp.MAXHOURSOLD = Convert.ToInt16(this.textBox16.Text);
+            if (!String.IsNullOrEmpty(this.textBox16.Text)) tmp.MAXHOURSOLD = Convert.ToInt16(this.textBox16.Text);
 
 
-            try
-            {
-            tmp.REFRESHDELAY = Convert.ToInt16(this.textBox3.Text);
+            if (String.IsNullOrEmpty(this.textBox3.Text)) tmp.REFRESHDELAY = 20000;
+            else tmp.REFRESHDELAY = Convert.ToInt16(this.textBox3.Text);
                 //tmp.CloneSellers(GlobalOptions.prohibitedSellers);                
             tmp.CloneWords(new List<string>(this.textBox17.Text.Split(';')));
-            }
-            catch { }
+            
+            
 
             if (u_core.refPoints == null) { u_core.refPoints = new List<PointOfInterest>(); }
             u_core.refPoints.Add(tmp);
@@ -630,7 +631,8 @@ namespace aukrochecker
             }
             listBox4.Items.Clear();
             foreach (PointOfInterest p in u_core.refPoints ?? new List<PointOfInterest>()) {
-                listBox4.Items.Add(p.nameOfPoint);
+                if (String.IsNullOrEmpty(p.nameOfPoint)) listBox4.Items.Add(p.fileName);
+                else listBox4.Items.Add(p.nameOfPoint);
             }
 
 
@@ -677,7 +679,7 @@ namespace aukrochecker
 
 
 
-    [Serializable()]
+    [Serializable]
     public class PointOfInterest
     {
         public int MAXPRICE = 2000;
@@ -688,7 +690,7 @@ namespace aukrochecker
         public string[] CATURL; // = { "/notebooky-prislusenstvi-notebooky-netbooky-100709", "/notebooky-prislusenstvi-poskozene-100720" };
         public List<string> prohibitedSellers;
         public List<string> prohibitedPhrases;
-        public string[] urlAddresses; //= { Constants.BASEURL + Constants.CATURL + Constants.SECTIONURL, Constants.BASEURL + Constants.CATURL2 + Constants.SECTIONURL };
+        public string urlAddresses = ""; //= { Constants.BASEURL + Constants.CATURL + Constants.SECTIONURL, Constants.BASEURL + Constants.CATURL2 + Constants.SECTIONURL };
 
         public string fileName = "config";
         public long MINPRICE;
@@ -708,7 +710,7 @@ namespace aukrochecker
         public void updateURLadresses()
         {
             this.SECTIONURL = "&startingTime=" + Convert.ToString(this.MAXHOURSOLD) + "&startingTime_enabled=1&price_to=" + Convert.ToString(this.MAXPRICE) + "&price_enabled=1";
-            this.urlAddresses = new string[] { this.BASEURL + this.CATURL[0] + this.SECTIONURL };
+            this.urlAddresses = this.BASEURL + this.CATURL[0] + this.SECTIONURL;
             
         }
 
@@ -740,9 +742,7 @@ namespace aukrochecker
             this.prohibitedPhrases = prohibitedPhrases;
         }
 
-
-
-
+        
     }
 
 }

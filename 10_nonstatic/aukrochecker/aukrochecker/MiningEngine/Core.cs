@@ -124,10 +124,10 @@ namespace aukrochecker.MiningEngine
 
                 foreach (PointOfInterest point in pointsInThread)
                 {
-                    point.urlAddresses[0] = composeURLadressAukro(point);
+                    point.urlAddresses = composeURLadressAukro(point);
 
-                    foreach (string urlAddress in point.urlAddresses)
-                    {
+                    //foreach (string urlAddress in point.urlAddresses)
+                    //{
 
                         form.dEcho("\n new scan at " + string.Format("{0:HH:mm:ss tt}", DateTime.Now) + " with " + point.nameOfPoint);
                        
@@ -144,8 +144,8 @@ namespace aukrochecker.MiningEngine
                         string[] separItemIDend = Constants.separItemIDend;
 
                         string sellerID = "";
-                        form.dEcho("Used web url:\n"+ urlAddress);
-                        string data = c_webCtrl.readHttpPage(urlAddress); //return RAW httppage, return "" if not available
+                        form.dEcho("Used web url:\n"+ point.urlAddresses);
+                        string data = c_webCtrl.readHttpPage(point.urlAddresses); //return RAW httppage, return "" if not available
                         
                         string[] parseToTopics = data.Split(separatingChars, StringSplitOptions.None);
                         string[] tempTagParser = null, tempTagParser2 = null, tempTagParser3 = null, tempTagParser4 = null, tempTagParser5 = null;
@@ -293,7 +293,7 @@ namespace aukrochecker.MiningEngine
                         // listBox1.Items.Add("filtered");
 
                         Thread.Sleep(Constants.REFRESHDELAY);
-                    }
+                    
                 }
             }
 

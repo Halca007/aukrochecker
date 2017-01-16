@@ -28,8 +28,6 @@ namespace aukrochecker.MiningEngine
         {
             string[] tmp = { };
 
-            try
-            {
                 if (File.Exists(inputFileName))
                 {
                     XmlSerializer serializer = new XmlSerializer(tmp.GetType());
@@ -39,12 +37,8 @@ namespace aukrochecker.MiningEngine
                     }
 
                 }
-            }
-            catch
-            {
-                //TO BE 
-            }
-
+            
+            
             return tmp;
         }
 
@@ -82,7 +76,7 @@ namespace aukrochecker.MiningEngine
             }
             if (binary) {
                 foreach (string f in filesToBeLoad) {
-                    realName = f + ".bin";
+                    realName = f;
                     PointOfInterest point = new PointOfInterest();
                     point.fileName = realName;
                     loadConfig(point,true);
@@ -136,7 +130,7 @@ namespace aukrochecker.MiningEngine
         }
 
         public void loadPoint(PointOfInterest point) {
-            point = ReadFromBinaryFile<PointOfInterest>("C:\\tmp\\out.bin");
+            point = ReadFromBinaryFile<PointOfInterest>(point.fileName);
         }
 
         public static T ReadFromBinaryFile<T>(string filePath)
@@ -230,8 +224,8 @@ namespace aukrochecker.MiningEngine
             {   
                 List<String> optionToBeSaved = new List<String>();
 
-                if (pointToBeSaved.nameOfPoint == null) { pointToBeSaved.nameOfPoint = "not defined"; };
-                if (pointToBeSaved.urlAddresses == null) { pointToBeSaved.urlAddresses = new String[1] { "not defined" }; };
+                if (pointToBeSaved.nameOfPoint == null) { pointToBeSaved.nameOfPoint = "not defined"; }
+                if (pointToBeSaved.urlAddresses == null) { pointToBeSaved.urlAddresses = "not defined"; }
 
                 optionToBeSaved.Add(pointToBeSaved.MAXHOURSOLD.ToString());
                 optionToBeSaved.Add(pointToBeSaved.MAXPRICE.ToString());
