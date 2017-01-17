@@ -626,7 +626,7 @@ namespace aukrochecker
                 point.updateURLadresses();
                 
                 if (u_core.refPoints == null) { u_core.refPoints = new List<PointOfInterest>(); }
-                */
+                 */
                 
             }
             listBox4.Items.Clear();
