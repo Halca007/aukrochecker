@@ -9,7 +9,7 @@ using System.Text.RegularExpressions;
 
 namespace aukrochecker.MiningEngine
 {
-     class Storage
+   public  class Storage
     {
         Core st_core;
         public Storage(Core core) {
