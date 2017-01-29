@@ -1,0 +1,11 @@
+C:\Users\halci\Source\Repos\aukrochecker\10_nonstatic\aukrochecker\aukrocheckerTest\obj\Debug\aukrocheckerTest.csprojResolveAssemblyReference.cache
+C:\Users\halci\Source\Repos\aukrochecker\10_nonstatic\aukrochecker\aukrocheckerTest\bin\Debug\aukrocheckerTest.dll
+C:\Users\halci\Source\Repos\aukrochecker\10_nonstatic\aukrochecker\aukrocheckerTest\bin\Debug\aukrocheckerTest.pdb
+C:\Users\halci\Source\Repos\aukrochecker\10_nonstatic\aukrochecker\aukrocheckerTest\bin\Debug\aukrochecker.exe
+C:\Users\halci\Source\Repos\aukrochecker\10_nonstatic\aukrochecker\aukrocheckerTest\bin\Debug\Microsoft.VisualStudio.TestTools.UITest.Extension.dll
+C:\Users\halci\Source\Repos\aukrochecker\10_nonstatic\aukrochecker\aukrocheckerTest\bin\Debug\nunit.framework.dll
+C:\Users\halci\Source\Repos\aukrochecker\10_nonstatic\aukrochecker\aukrocheckerTest\bin\Debug\Microsoft.VisualStudio.OLE.Interop.dll
+C:\Users\halci\Source\Repos\aukrochecker\10_nonstatic\aukrochecker\aukrocheckerTest\bin\Debug\aukrochecker.pdb
+C:\Users\halci\Source\Repos\aukrochecker\10_nonstatic\aukrochecker\aukrocheckerTest\bin\Debug\nunit.framework.xml
+C:\Users\halci\Source\Repos\aukrochecker\10_nonstatic\aukrochecker\aukrocheckerTest\obj\Debug\aukrocheckerTest.dll
+C:\Users\halci\Source\Repos\aukrochecker\10_nonstatic\aukrochecker\aukrocheckerTest\obj\Debug\aukrocheckerTest.pdb

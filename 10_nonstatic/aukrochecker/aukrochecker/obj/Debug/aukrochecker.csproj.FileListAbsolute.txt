@@ -1,0 +1,15 @@
+C:\Users\halci\Source\Repos\aukrochecker\10_nonstatic\aukrochecker\aukrochecker\bin\Debug\aukrochecker.exe.config
+C:\Users\halci\Source\Repos\aukrochecker\10_nonstatic\aukrochecker\aukrochecker\bin\Debug\aukrochecker.exe
+C:\Users\halci\Source\Repos\aukrochecker\10_nonstatic\aukrochecker\aukrochecker\bin\Debug\aukrochecker.pdb
+C:\Users\halci\Source\Repos\aukrochecker\10_nonstatic\aukrochecker\aukrochecker\bin\Debug\Castle.Core.dll
+C:\Users\halci\Source\Repos\aukrochecker\10_nonstatic\aukrochecker\aukrochecker\bin\Debug\Moq.dll
+C:\Users\halci\Source\Repos\aukrochecker\10_nonstatic\aukrochecker\aukrochecker\bin\Debug\nunit.framework.dll
+C:\Users\halci\Source\Repos\aukrochecker\10_nonstatic\aukrochecker\aukrochecker\bin\Debug\Castle.Core.xml
+C:\Users\halci\Source\Repos\aukrochecker\10_nonstatic\aukrochecker\aukrochecker\bin\Debug\Moq.xml
+C:\Users\halci\Source\Repos\aukrochecker\10_nonstatic\aukrochecker\aukrochecker\bin\Debug\nunit.framework.xml
+C:\Users\halci\Source\Repos\aukrochecker\10_nonstatic\aukrochecker\aukrochecker\obj\Debug\aukrochecker.csprojResolveAssemblyReference.cache
+C:\Users\halci\Source\Repos\aukrochecker\10_nonstatic\aukrochecker\aukrochecker\obj\Debug\aukrochecker.Form1.resources
+C:\Users\halci\Source\Repos\aukrochecker\10_nonstatic\aukrochecker\aukrochecker\obj\Debug\aukrochecker.Properties.Resources.resources
+C:\Users\halci\Source\Repos\aukrochecker\10_nonstatic\aukrochecker\aukrochecker\obj\Debug\aukrochecker.csproj.GenerateResource.Cache
+C:\Users\halci\Source\Repos\aukrochecker\10_nonstatic\aukrochecker\aukrochecker\obj\Debug\aukrochecker.exe
+C:\Users\halci\Source\Repos\aukrochecker\10_nonstatic\aukrochecker\aukrochecker\obj\Debug\aukrochecker.pdb

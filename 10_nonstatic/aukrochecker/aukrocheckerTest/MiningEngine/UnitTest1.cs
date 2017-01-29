@@ -1,4 +1,4 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using NUnit.Framework;
 using aukrochecker.MiningEngine;
 using System;
 using System.Collections.Generic;
@@ -8,13 +8,9 @@ using System.Threading.Tasks;
 
 namespace aukrochecker.MiningEngine.Tests
 {
-    [TestClass()]
+    [TestFixture]
     public class UnitTest1
     {
-        [TestMethod()]
-        public void miningRoutineTest()
-        {
-            Assert.Fail();
-        }
+        
     }
 }
